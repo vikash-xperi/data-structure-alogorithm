@@ -10,9 +10,24 @@ public class MaxAndMinArray {
         int arr[] = { 1000, 11, 445, 1, 330, 3000 };
 //        Pair minmax = getMinMax(arr, 0, arr.length - 1);
 //        Pair minmax = compareInPairs(arr);
-        Pair minmax = usingHeap(arr);
+        Pair minmax = test(arr);
+//        Pair minmax = usingHeap(arr);
         System.out.println("Minimum: "+ minmax.min);
         System.out.println("Maximum: "+ minmax.max);
+    }
+
+    public static Pair test(int[] arr) {
+        Pair pair = new Pair();
+        int max = arr[0];
+        int min = arr[0];
+
+        for (int i = 1; i < arr.length; ++i) {
+            if (arr[i] > max) max = arr[i];
+            else if (arr[i] < min) min = arr[i];
+        }
+        pair.max = max;
+        pair.min = min;
+        return pair;
     }
 
     /**

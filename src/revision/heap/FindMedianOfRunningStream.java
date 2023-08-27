@@ -4,8 +4,8 @@ import java.util.Collections;
 import java.util.PriorityQueue;
 
 public class FindMedianOfRunningStream {
-    private PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
-    private PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+    private final PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+    private final PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
     public void insert(int num) {
         if (maxHeap.isEmpty() || maxHeap.peek() >= num) {
